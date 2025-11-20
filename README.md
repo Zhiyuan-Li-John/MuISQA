@@ -1,3 +1,4 @@
+<h1 align="center"> MuISQA: Multi-Intent Retrieval-Augmented Generation for Scientific Question Answering</h1>
 
 # MuISQA
 
@@ -7,24 +8,11 @@ MuISQA is a RAG project built by modifying and testing on FastGPT, and its main 
 We also clarify that our project does not affect FastGPT’s copyright or any related rights; it is solely an experimental study conducted for RAG research purposes.
 
 
-
 ## 🛸 Introduction
 
 <div align="center">
-
-[**Zhiyuan Li**](https://github.com/Zhiyuan-Li-John)<sup></sup> · [**Heng Wang**](https://scholar.google.com.au/citations?user=jPj4ViQAAAAJ&hl=en&oi=ao)<sup></sup> · [**Dongnan Liu**](https://scholar.google.com.au/citations?user=JZzb8XUAAAAJ&hl=en&oi=ao)<sup></sup> · [**Chaoyi Zhang**](https://scholar.google.com.au/citations?user=GSM6eT0AAAAJ&hl=en&oi=ao)<sup></sup> · [**Ao Ma**](https://) · [**Jieting Long**](https://) · [**Weidong Cai**](https://scholar.google.com.au/citations?user=N8qTc2AAAAAJ&hl=en&oi=ao)<sup></sup>
-
-School of Computer Science, The University of Sydney
-
-<a href='https://mucr-benchmark.github.io/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
-<a href='https://arxiv.org/pdf/2408.08105'><img src='https://img.shields.io/badge/Arxiv-Paper-red'></a>
-<a href='https://huggingface.co/datasets/Pinkygin/MuCR'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'></a>
-</div>
-
-<h1 align="center"> MuISQA: Multi-Intent Retrieval-Augmented Generation for Scientific Question Answering</h1>
-
-<div align="center">
-[**Zhiyuan Li**](https://scholar.google.com/citations?user=vdrrpk8AAAAJ&hl=en)<sup></sup> · [**HaiSheng Yu**](https://https://www.linkedin.com/in/%E6%B5%B7%E7%94%9F-%E4%BA%8E-238a80103/)<sup></sup> · [**Guangchuan Guo**](https://www.linkedin.com/in/%E5%B9%BF%E5%B7%9D-%E9%83%AD-04155511b/)<sup></sup> · [**Nan Zhou**](https://www.linkedin.com/in/%E5%8D%97-%E5%91%A8-63389738a/)<sup></sup> · [**Jiajun Zhang**](https://scholar.google.com/citations?user=93zngeYAAAAJ&hl=en)<sup></sup>
+ 
+[**Zhiyuan Li**](https://scholar.google.com/citations?user=vdrrpk8AAAAJ&hl=en)<sup></sup> · [**Haisheng Yu**](https://www.linkedin.com/in/%E6%B5%B7%E7%94%9F-%E4%BA%8E-238a80103)<sup></sup> · [**Guangchuan Guo**](https://www.linkedin.com/in/%E5%B9%BF%E5%B7%9D-%E9%83%AD-04155511b/)<sup></sup> · [**Nan Zhou**](https://www.linkedin.com/in/%E5%8D%97-%E5%91%A8-63389738a/)<sup></sup> · [**Jiajun Zhang**](https://scholar.google.com/citations?user=93zngeYAAAAJ&hl=en)<sup></sup>
 </div>
 
 <p align="center">
@@ -73,17 +61,15 @@ git clone https://github.com/Zhiyuan-Li-John/MuISQA.git
 
 #### Step 2:
 Please refer to the FastGPT local development documentation and complete the corresponding installation steps:
-```
 [Quick Start for Local Development](https://doc.tryfastgpt.ai/docs/development/intro/)
-```
-更多Fastgpt说明文件
-```
+
+More FastGPT documentation:
 * [System Configuration Guide](https://doc.tryfastgpt.ai/docs/development/configuration/)
 * [Multi-Model Configuration](https://doc.tryfastgpt.ai/docs/development/modelconfig/one-api/)
 * [Version Upgrade Instructions](https://doc.tryfastgpt.ai/docs/development/upgrading/)
 * [OpenAPI Documentation](https://doc.tryfastgpt.ai/docs/development/openapi/)
 * [Knowledge Base & RAG Structure](https://doc.tryfastgpt.ai/docs/guide/knowledge_base/rag/)
-```
+
 #### Step 3:
 Our intent-aware retrieval framework has already been integrated into FastGPT. To enable and use it, please follow the steps below:
 <p align="center">
