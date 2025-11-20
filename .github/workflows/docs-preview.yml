@@ -1,0 +1,95 @@
+name: Preview FastGPT docs
+
+on:
+  pull_request_target:
+    paths:
+      - 'docSite/**'
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains jobs "deploy-production"
+  deploy-preview:
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+      pull-requests: write
+    # The environment this job references
+    environment:
+      name: Preview
+      url: ${{ steps.vercel-action.outputs.preview-url }}
+
+    # The type of runner that the job will run on
+    runs-on: ubuntu-24.04
+
+    # Job outputs
+    outputs:
+      url: ${{ steps.vercel-action.outputs.preview-url }}
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Step 1 - Checks-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          submodules: recursive # Fetch submodules
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 2 Detect changes to Docs Content
+      - name: Detect changes in doc content
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            docs:
+              - 'docSite/content/docs/**'
+          base: main
+
+      # Step 3 - Install Hugo (specific version)
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.117.0'
+          extended: true
+
+      # Step 4 - Builds the site using Hugo
+      - name: Build
+        run: cd docSite && hugo mod get -u github.com/colinwilson/lotusdocs@6d0568e && hugo -v --minify
+
+      # Step 5 - Push our generated site to Cloudflare
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./docSite/public --project-name=fastgpt-doc
+          packageManager: npm
+
+      - name: Create deployment status comment
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          PREVIEW_URL: ${{ steps.deploy.outputs.deployment-url }}
+        uses: actions/github-script@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const success = process.env.JOB_STATUS === 'success';
+            const deploymentUrl = `${process.env.PREVIEW_URL}`;
+            const status = success ? '✅ Success' : '❌ Failed';
+            console.log(process.env.JOB_STATUS);
+
+            const commentBody = `**Deployment Status: ${status}**
+            ${success ? `🔗 Preview URL: ${deploymentUrl}` : ''}`;
+
+            await github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: context.payload.pull_request.number,
+              body: commentBody
+            });

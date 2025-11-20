@@ -1,0 +1,387 @@
+﻿{
+  "name": "简易知识库",
+  "intro": "最简单的知识库",
+  "author": "zhounan",
+  "avatar": "core/workflow/template/datasetSearch",
+  "tags": [
+      "office-services"
+  ],
+  "type": "advanced",
+  "workflow": {
+      "nodes": [
+          {
+              "nodeId": "userGuide",
+              "name": "common:core.module.template.system_config",
+              "intro": "common:core.module.template.system_config_info",
+              "avatar": "core/workflow/template/systemConfig",
+              "flowNodeType": "userGuide",
+              "position": {
+                  "x": 141.46124720024426,
+                  "y": -476.84725043368405
+              },
+              "version": "481",
+              "inputs": [
+                  {
+                      "key": "welcomeText",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "valueType": "string",
+                      "label": "core.app.Welcome Text",
+                      "value": ""
+                  },
+                  {
+                      "key": "variables",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "valueType": "any",
+                      "label": "core.app.Chat Variable",
+                      "value": []
+                  },
+                  {
+                      "key": "questionGuide",
+                      "valueType": "any",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "core.app.Question Guide",
+                      "value": {
+                          "open": false
+                      }
+                  },
+                  {
+                      "key": "tts",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "valueType": "any",
+                      "label": "",
+                      "value": {
+                          "type": "web"
+                      }
+                  },
+                  {
+                      "key": "whisper",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "valueType": "any",
+                      "label": "",
+                      "value": {
+                          "open": false,
+                          "autoSend": false,
+                          "autoTTSResponse": false
+                      }
+                  },
+                  {
+                      "key": "scheduleTrigger",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "valueType": "any",
+                      "label": "",
+                      "value": null
+                  }
+              ],
+              "outputs": []
+          },
+          {
+              "nodeId": "448745",
+              "name": "common:core.module.template.work_start",
+              "intro": "",
+              "avatar": "core/workflow/template/workflowStart",
+              "flowNodeType": "workflowStart",
+              "position": {
+                  "x": 632.368838596004,
+                  "y": -347.7446492944009
+              },
+              "version": "481",
+              "inputs": [
+                  {
+                      "key": "userChatInput",
+                      "renderTypeList": [
+                          "reference",
+                          "textarea"
+                      ],
+                      "valueType": "string",
+                      "label": "common:core.module.input.label.user question",
+                      "required": true,
+                      "toolDescription": "用户问题",
+                      "debugLabel": ""
+                  }
+              ],
+              "outputs": [
+                  {
+                      "id": "userChatInput",
+                      "key": "userChatInput",
+                      "label": "common:core.module.input.label.user question",
+                      "type": "static",
+                      "valueType": "string",
+                      "description": ""
+                  }
+              ]
+          },
+          {
+              "nodeId": "hH0TIRZuJlLQocHR",
+              "name": "知识库搜索",
+              "intro": "调用“语义检索”和“全文检索”能力，从“知识库”中查找可能与问题相关的参考内容",
+              "avatar": "core/workflow/template/datasetSearch",
+              "flowNodeType": "datasetSearchNode",
+              "showStatus": true,
+              "position": {
+                  "x": 1060.421891404858,
+                  "y": -360.2446492944009
+              },
+              "version": "4.9.2",
+              "inputs": [
+                  {
+                      "key": "datasets",
+                      "renderTypeList": [
+                          "selectDataset",
+                          "reference"
+                      ],
+                      "label": "选择知识库",
+                      "value": [
+                          "VARIABLE_NODE_ID",
+                          "datasets"
+                      ],
+                      "valueType": "selectDataset",
+                      "required": true,
+                      "valueDesc": "{\n  datasetId: string;\n}[]",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": "",
+                      "selectedTypeIndex": 1
+                  },
+                  {
+                      "key": "similarity",
+                      "renderTypeList": [
+                          "selectDatasetParamsModal"
+                      ],
+                      "label": "",
+                      "value": 0.7,
+                      "valueType": "number",
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "limit",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "value": 5000,
+                      "valueType": "number",
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "searchMode",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "string",
+                      "value": "embedding",
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "embeddingWeight",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "number",
+                      "value": 0.5,
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "usingReRank",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "boolean",
+                      "value": false,
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "rerankModel",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "string",
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": "",
+                      "value": "qwen3"
+                  },
+                  {
+                      "key": "rerankWeight",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "number",
+                      "value": 0.5,
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "datasetSearchUsingExtensionQuery",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "boolean",
+                      "value": true,
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "datasetSearchExtensionModel",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "string",
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": "",
+                      "value": "qwen3"
+                  },
+                  {
+                      "key": "datasetSearchExtensionBg",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "string",
+                      "value": "",
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "authTmbId",
+                      "renderTypeList": [
+                          "hidden"
+                      ],
+                      "label": "",
+                      "valueType": "boolean",
+                      "value": false,
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  },
+                  {
+                      "key": "userChatInput",
+                      "renderTypeList": [
+                          "reference",
+                          "textarea"
+                      ],
+                      "valueType": "string",
+                      "label": "用户问题",
+                      "toolDescription": "需要检索的内容",
+                      "required": true,
+                      "value": [
+                          "448745",
+                          "userChatInput"
+                      ],
+                      "valueDesc": "",
+                      "description": "",
+                      "debugLabel": ""
+                  },
+                  {
+                      "key": "collectionFilterMatch",
+                      "renderTypeList": [
+                          "textarea",
+                          "reference"
+                      ],
+                      "label": "集合元数据过滤",
+                      "valueType": "string",
+                      "isPro": true,
+                      "description": "workflow:filter_description",
+                      "valueDesc": "",
+                      "debugLabel": "",
+                      "toolDescription": ""
+                  }
+              ],
+              "outputs": [
+                  {
+                      "id": "quoteQA",
+                      "key": "quoteQA",
+                      "label": "知识库引用",
+                      "description": "特殊数组格式，搜索结果为空时，返回空数组。",
+                      "type": "static",
+                      "valueType": "datasetQuote",
+                      "valueDesc": "{\n  id: string;\n  datasetId: string;\n  collectionId: string;\n  sourceName: string;\n  sourceId?: string;\n  q: string;\n  a: string\n}[]"
+                  }
+              ]
+          }
+      ],
+      "edges": [
+          {
+              "source": "448745",
+              "target": "hH0TIRZuJlLQocHR",
+              "sourceHandle": "448745-source-right",
+              "targetHandle": "hH0TIRZuJlLQocHR-target-left"
+          }
+      ],
+      "chatConfig": {
+          "variables": [
+              {
+                  "id": "oWKjYH",
+                  "key": "datasets",
+                  "label": "datasets",
+                  "type": "custom",
+                  "description": "",
+                  "required": false,
+                  "valueType": "selectDataset",
+                  "list": [
+                      {
+                          "value": "",
+                          "label": ""
+                      }
+                  ],
+                  "defaultValue": "",
+                  "enums": [
+                      {
+                          "value": "",
+                          "label": ""
+                      }
+                  ]
+              }
+          ],
+          "scheduledTriggerConfig": {
+              "cronString": "",
+              "timezone": "Asia/Shanghai",
+              "defaultPrompt": ""
+          },
+          "_id": "6853f8579d3a3ebd3cd8e2a5"
+      }
+  }
+}
