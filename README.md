@@ -10,6 +10,17 @@ We also clarify that our project does not affect FastGPT’s copyright or any re
 
 ## 🛸 Introduction
 
+<div align="center">
+
+[**Zhiyuan Li**](https://github.com/Zhiyuan-Li-John)<sup></sup> · [**Heng Wang**](https://scholar.google.com.au/citations?user=jPj4ViQAAAAJ&hl=en&oi=ao)<sup></sup> · [**Dongnan Liu**](https://scholar.google.com.au/citations?user=JZzb8XUAAAAJ&hl=en&oi=ao)<sup></sup> · [**Chaoyi Zhang**](https://scholar.google.com.au/citations?user=GSM6eT0AAAAJ&hl=en&oi=ao)<sup></sup> · [**Ao Ma**](https://) · [**Jieting Long**](https://) · [**Weidong Cai**](https://scholar.google.com.au/citations?user=N8qTc2AAAAAJ&hl=en&oi=ao)<sup></sup>
+
+School of Computer Science, The University of Sydney
+
+<a href='https://mucr-benchmark.github.io/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
+<a href='https://arxiv.org/pdf/2408.08105'><img src='https://img.shields.io/badge/Arxiv-Paper-red'></a>
+<a href='https://huggingface.co/datasets/Pinkygin/MuCR'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'></a>
+</div>
+
 <h1 align="center"> MuISQA: Multi-Intent Retrieval-Augmented Generation for Scientific Question Answering</h1>
 
 <div align="center">
