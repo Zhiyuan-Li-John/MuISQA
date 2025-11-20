@@ -26,13 +26,13 @@ Complex scientific questions often entail multiple intents, such as identifying 
 
 ## 💡 MuISQA benchmark
 
-<p align="center">
+<p align="left">
   <img src="images/picture1.png">
 </p>
 
 ## 💪 Intent-aware retrieval framework
 
-<p align="center">
+<p align="left">
   <img src="images/picture2.png">
 </p>
 
@@ -40,13 +40,13 @@ Complex scientific questions often entail multiple intents, such as identifying 
 
 #### Performance on MuISQA Benchmark
 
-<p align="center">
+<p align="left">
   <img src="images/picture3.png">
 </p>
 
 #### Performance on Multi-hop Benchmarks
 
-<p align="center">
+<p align="left">
   <img src="images/picture4.png">
 </p>
 
@@ -72,13 +72,13 @@ More FastGPT documentation:
 
 #### Step 3:
 Our intent-aware retrieval framework has already been integrated into FastGPT. To enable and use it, please follow the steps below:
-<p align="center">
+<p align="left">
   <img src="images/picture5.png">
 </p>
-<p align="center">
+<p align="left">
   <img src="images/picture6.png">
 </p>
-<p align="center">
+<p align="left">
   <img src="images/picture7.png">
 </p>
 
