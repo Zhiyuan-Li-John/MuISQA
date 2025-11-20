@@ -27,13 +27,13 @@ Complex scientific questions often entail multiple intents, such as identifying 
 ## 💡 MuISQA benchmark
 
 <p align="center">
-  <img src="images/picture1.pdf">
+  <img src="images/picture1.png">
 </p>
 
 ## 💪 Intent-aware retrieval framework
 
 <p align="center">
-  <img src="images/picture2.pdf">
+  <img src="images/picture2.png">
 </p>
 
 ## 👀 Performance
