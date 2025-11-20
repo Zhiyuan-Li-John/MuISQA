@@ -1,11 +1,11 @@
-<div align="center">
+
 # MuISQA
 
 MuISQA is a RAG project built by modifying and testing on FastGPT, and its main contributions can be divided into two parts:
  1. Multi-Intent Scientific Question Answering (MuISQA) benchmark
  2. Intent-aware retrieval framework
 We also clarify that our project does not affect FastGPT’s copyright or any related rights; it is solely an experimental study conducted for RAG research purposes.
-</div>
+
 
 
 ## 🛸 Introduction
