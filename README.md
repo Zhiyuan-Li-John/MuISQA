@@ -17,7 +17,7 @@ We also clarify that our project does not affect FastGPT’s copyright or any re
 
 <p align="center">
   	<b>
-    [<a href="https://">ArXiv</a>] | [<a href="https://">🤗HuggingFace</a>]
+    [<a href="https://arxiv.org/abs/2511.16283">ArXiv</a>] | [<a href="https://">🤗HuggingFace</a>]
     </b>
     <br/>
 </p>
@@ -89,7 +89,7 @@ If you find this project useful for your research, please consider citing the fo
 @article{li2025muisqa,
   title={MuISQA: Multi-Intent Retrieval-Augmented Generation for Scientific Question Answering},
   author={Li, Zhiyuan and Yu, Haisheng and Guo, Guangchuan and Zhou, Nan and Zhang, Jiajun},
-  journal={arXiv preprint },
+  journal={arXiv preprint arXiv:2511.16283},
   year={2025}
 }
 }
