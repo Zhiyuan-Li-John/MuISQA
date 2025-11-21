@@ -18,7 +18,7 @@ We also clarify that our project does not affect FastGPT’s copyright or any re
 
 <p align="center">
   	<b>
-    [<a href="https://arxiv.org/abs/2511.16283">ArXiv</a>] | [<a href="https://">🤗HuggingFace</a>]
+    [<a href="https://arxiv.org/abs/2511.16283">ArXiv</a>] | [<a href="https://huggingface.co/datasets/Pinkygin/MuISQA">🤗HuggingFace</a>]
     </b>
     <br/>
 </p>
